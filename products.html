@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Shop — Lumé Décor</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="container nav-row">
+      <a class="brand" href="index.html"><img src="../Assets/logo.jpg" alt="logo" class="logo"><span class="wordmark">Lumé<span class="accent">Décor</span></span></a>
+      <nav aria-label="Primary" class="main-nav">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Shop</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="cart.html">Cart <span class="cart-count" id="cart-count">0</span></a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main class="container">
+    <header class="page-header fade-up">
+      <h1>Shop</h1>
+      <p class="muted">Handpick mirrors, LED signs, wall art and accessories.</p>
+    </header>
+
+    <!-- category filters -->
+    <div class="filters fade-up" role="toolbar" aria-label="Product categories">
+      <a class="chip active" href="products.html">All</a>
+      <a class="chip" href="products.html#mirrors">Mirrors</a>
+      <a class="chip" href="products.html#leds">LED Signs</a>
+      <a class="chip" href="products.html#wallart">Wall Art</a>
+      <a class="chip" href="products.html#accessories">Accessories</a>
+    </div>
+
+    <!-- ===== Custom Mirrors ===== -->
+    <section id="mirrors" class="section-block">
+      <h2 class="section-title fade-up">Custom Mirrors</h2>
+      <div class="grid-4 products-grid">
+	  <article class="product glass-card fade-up" data-id="mirror-1" data-name="Engraved Mirror" data-price="6500" data-img="../Assets/engraved mirror preview.jpg">
+         <img src="../Assets/engraved led mirror.jpg" alt="Engraved Mirror" />
+          <div class="prod-body">
+            <h3>Engraved Mirror</h3>
+            <p class="price">JMD 6,500</p>
+            <p class="muted tiny">Personalize with initials or name.</p>
+            <div class="prod-actions">
+              <button class="btn add-to-cart">Add to Cart</button>
+              <button class="btn ghost customize-btn">Customize</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product glass-card fade-up" data-id="mirror-2" data-name="LED Backlit Mirror" data-price="9800" data-img="../Assets/backlit mirror.jpg">
+          <img src="../Assets/backlit mirror.jpg" alt="LED Backlit  Mirror" />
+          <div class="prod-body">
+            <h3>LED Backlit Mirror</h3>
+            <p class="price">JMD 9,800</p>
+            <p class="muted tiny">Adjustable lighting with dimmer.</p>
+            <div class="prod-actions">
+              <button class="btn add-to-cart">Add to Cart</button>
+              <button class="btn ghost customize-btn">Customize</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product glass-card fade-up" data-id="mirror-3" data-name="Asymmetric Wall Mirror" data-price="7200" data-img="../Assets/Asymmetrical mirror22_.jpg" ">
+          <img src="../Assets/Asymmetrical mirror.jpg"  alt="Asymmetric Wall Mirror" />
+          <div class="prod-body">
+            <h3>Asymmetric Wall Mirror</h3>
+            <p class="price">JMD 7,200</p>
+            <p class="muted tiny">Modern shape for unique spaces.</p>
+            <div class="prod-actions">
+              <button class="btn add-to-cart">Add to Cart</button>
+              <button class="btn ghost customize-btn">Customize</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product glass-card fade-up" data-id="mirror-4" data-name="Arch Gold Framed Mirror" data-price="8900" data-img="../Assets/Arch gold frame mirror.jpg">
+          <img src="../Assets/Arch gold frame mirror.jpg" alt="Arch Gold Framed Mirror" />
+          <div class="prod-body">
+            <h3>Arch Gold Framed Mirror</h3>
+            <p class="price">JMD 8,900</p>
+            <p class="muted tiny">Elegant and timeless arch design.</p>
+            <div class="prod-actions">
+              <button class="btn add-to-cart">Add to Cart</button>
+              <button class="btn ghost customize-btn">Customize</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== LED Signs ===== -->
+    <section id="leds" class="section-block">
+      <h2 class="section-title fade-up glow">LED Signs</h2>
+      <div class="grid-4 products-grid">
+        <article class="product glass-card fade-up" data-id="led-1" data-name="Programmable LED Sign" data-price="5400" data-img="../Assets/programmable led sign.jpg">
+          <img src="../Assets/programmable led sign.jpg" alt="Programmable LED Sign" />
+          <div class="prod-body">
+            <h3>Programmable LED Sign</h3>
+            <p class="price">JMD 5,400</p>
+            <div class="prod-actions">
+              <button class="btn add-to-cart">Add to Cart</button>
+              <button class="btn ghost customize-btn">Customize</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product glass-card fade-up" data-id="led-2" data-name="Heart LED Neon" data-price="6100" data-img="../Assets/heart neon sign.jpg">
+          <img src="../Assets/heart neon sign.jpg" alt="Heart LED Neon" />
+          <div class="prod-body">
+            <h3>Heart LED Neon</h3>
+            <p class="price">JMD 6,100</p>
+            <div class="prod-actions">
+              <button class="btn add-to-cart">Add to Cart</button>
+              <button class="btn ghost customize-btn">Customize</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product glass-card fade-up" data-id="led-3" data-name="Name LED Wall Sign" data-price="7800" data-img="../Assets/custom sign2.jpg">
+          <img src="../Assets/custom neon sign.jpg" alt="Name LED Wall Sign" />
+          <div class="prod-body">
+            <h3>Name LED Wall Sign</h3>
+            <p class="price">JMD 7,800</p>
+            <div class="prod-actions">
+              <button class="btn add-to-cart">Add to Cart</button>
+              <button class="btn ghost customize-btn">Customize</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product glass-card fade-up" data-id="led-4" data-name="4 Pcs Decorative LED Sign" data-price="6700" data-img="../Assets/4 pcs decorative sign.jpg">
+          <img src="../Assets/4 pcs decorative sign.jpg" alt="4 Pcs Decorative LED Sign" />
+          <div class="prod-body">
+            <h3>4 Pcs Decorative Sign</h3>
+            <p class="price">JMD 6,700</p>
+            <div class="prod-actions">
+              <button class="btn add-to-cart">Add to Cart</button>
+              <button class="btn ghost customize-btn">Customize</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== Wall Art ===== -->
+    <section id="wallart" class="section-block">
+      <h2 class="section-title fade-up">Wall Art</h2>
+      <div class="grid-4 products-grid">
+        <article class="product glass-card fade-up" data-id="wall-1" data-name="Abstract Canvas Art" data-price="2200" data-img="../Assets/Abstract wall art2.jpg">
+          <img src="../Assets/Abstract wall art.jpg" alt="Abstract Canvas Art" />
+          <div class="prod-body">
+            <h3>Abstract Canvas Art</h3>
+            <p class="price">JMD 2,200</p>
+            <div class="prod-actions">
+              <button class="btn add-to-cart">Add to Cart</button>
+              <button class="btn ghost customize-btn">Customize</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product glass-card fade-up" data-id="wall-2" data-name="Minimal Line Print" data-price="1800" data-img="../Assets/minimalist wall art.jpg">
+          <img src="../Assets/minimalist wall art.jpg" alt="Minimal Line Print" />
+          <div class="prod-body">
+            <h3>Minimal Line Print</h3>
+            <p class="price">JMD 1,800</p>
+            <div class="prod-actions">
+              <button class="btn add-to-cart">Add to Cart</button>
+              <button class="btn ghost customize-btn">Customize</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product glass-card fade-up" data-id="wall-3" data-name="Sunset Abstract Poster" data-price="2400" data-img="../Assets/Sunset Abstract Poster.jpg">
+          <img src="../Assets/Sunset Abstract Poster.jpg" alt="Sunset Abstract Poster" />
+          <div class="prod-body">
+            <h3>Sunset Abstract Poster</h3>
+            <p class="price">JMD 2,400</p>
+            <div class="prod-actions">
+              <button class="btn add-to-cart">Add to Cart</button>
+              <button class="btn ghost customize-btn">Customize</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product glass-card fade-up" data-id="wall-4" data-name="Blank Canvas" data-price="2100" data-img="../Assets/Blank Canvas2.jpg" >
+          <img src="../Assets/Blank Canvas.jpg" alt="Blank Canvas" />
+          <div class="prod-body">
+            <h3>Blank Canvas</h3>
+            <p class="price">JMD 2,100</p>
+            <div class="prod-actions">
+              <button class="btn add-to-cart">Add to Cart</button>
+              <button class="btn ghost customize-btn">Customize</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== Accessories ===== -->
+    <section id="accessories" class="section-block">
+      <h2 class="section-title fade-up">Accessories</h2>
+      <div class="grid-4 products-grid">
+        <article class="product glass-card fade-up" data-id="acc-1" data-name="LED night lamp" data-price="1200" data-img="../Assets/Led night light.jpg"">
+          <img src="../Assets/Led night light.jpg" alt="LED night lamp " />
+          <div class="prod-body">
+            <h3>LED Night Lamp (5m)</h3>
+            <p class="price">JMD 1,200</p>
+            <div class="prod-actions">
+              <button class="btn add-to-cart">Add to Cart</button>
+              <button class="btn ghost customize-btn">Customize</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product glass-card fade-up" data-id="acc-2" data-name="LED Wall Shelf" data-price="2600" data-img="../Assets/led wall shelf.jpg">
+          <img src="../Assets/led wall shelf.jpg" alt="LED Wall Shelf" />
+          <div class="prod-body">
+            <h3>LED Wall Shelf</h3>
+            <p class="price">JMD 2,600</p>
+            <div class="prod-actions">
+              <button class="btn add-to-cart">Add to Cart</button>
+              <button class="btn ghost customize-btn">Customize</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product glass-card fade-up" data-id="acc-3" data-name="LED Flower Pot" data-price="1800" data-img="../Assets/lED Flower Pot.jpg">
+          <img src="../Assets/lED Flower Pot.jpg" alt="LED Flower Pot" />
+          <div class="prod-body">
+            <h3>LED Flower Pot</h3>
+            <p class="price">JMD 1,800</p>
+            <div class="prod-actions">
+              <button class="btn add-to-cart">Add to Cart</button>
+              <button class="btn ghost customize-btn">Customize</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container foot-grid">
+      <div><h4>Lumé Décor</h4><p>Reflect your vibe.</p></div>
+      <div><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li></ul></div>
+    </div>
+    <div class="copyright">&copy; <span id="year2"></span> Lumé Décor</div>
+  </footer>
+
+  <!-- Customization Modal -->
+  
+ <!-- Customization Modal -->
+<div id="customModal" class="modal-overlay">
+  <div class="modal-content">
+    <button id="closeModal" class="close-btn">&times;</button>
+    <div class="modal-body">
+      <!-- Left: Preview -->
+      <div class="modal-left">
+        <img id="modalImage" src="https://images.unsplash.com/photo-1602526216323-d0c6f4d1c9bb?auto=format&fit=crop&w=800&q=80" alt="Product preview">
+        <div id="previewText">Your Text</div>
+      </div>
+
+      <!-- Right: Details + Customization -->
+      <div class="modal-right">
+        <h2 id="modalTitle">Product Name</h2>
+        <div id="modalPrice" class="price">JMD 0</div>
+
+        <!-- Scrollable Details Section -->
+        <div class="scroll-box" id="modalDetails">
+          <h4 style="margin:0 0 .4rem;color:var(--accent)">Product Details</h4>
+          <p id="modalDescription" style="font-size:.9rem;color:var(--muted)">
+            Personalize this mirror with your choice of text, size, and color to create a truly one-of-a-kind décor piece. 
+            Built with high-quality acrylic and energy-efficient LED lighting, this product is perfect for modern interiors.
+          </p>
+          <ul id="modalSpecs" style="font-size:.85rem;color:var(--muted);margin:0;padding-left:1rem;list-style-type:disc;">
+            <li>Material: Tempered Acrylic Glass</li>
+            <li>Light Source: RGB LED Strip (USB powered)</li>
+            <li>Voltage: ≤ 36V (low-energy safe)</li>
+            <li>Control Method: Touch/Remote</li>
+            <li>Finish: Polished Edge</li>
+            <li>Origin: China</li>
+            <li>Waterproof: No</li>
+          </ul>
+        </div>
+
+        <!-- Customization Fields -->
+        <div class="modal-row">
+          <label for="custText">Custom text (max 30 chars)</label>
+          <input id="custText" type="text" maxlength="30" placeholder="Type your text…">
+        </div>
+
+        <div class="modal-row">
+          <label for="custColor">Text color</label>
+          <input id="custColor" type="color" value="#ff66cc">
+        </div>
+		
+		<!-- Font Style -->
+		<div class="modal-row">
+		  <label for="custFont">Font style</label>
+		  <select id="custFont">
+			<option value="Poppins">Poppins</option>
+			<option value="Cursive">Cursive</option>
+			<option value="Montserrat">Montserrat</option>
+			<option value="Playfair Display">Elegant Script</option>
+		  </select>
+		</div>
+
+		<!-- Glow Strength -->
+		<div class="modal-row">
+		  <label for="custGlow">Glow intensity</label>
+		  <input id="custGlow" type="range" min="0" max="10" value="4">
+		</div>
+
+		<!-- Letter Spacing -->
+		<div class="modal-row">
+		  <label for="custSpace">Letter spacing</label>
+		  <input id="custSpace" type="range" min="-1" max="8" value="0">
+		</div>
+
+		<!-- Text Vertical Position -->
+		<div class="modal-row">
+		  <label>Move Text</label>
+		  <button id="textUp" class="btn small">▲</button>
+		  <button id="textDown" class="btn small">▼</button>
+		</div>
+
+
+        <div class="modal-row">
+          <label for="custSizeSelect">Size</label>
+          <select id="custSizeSelect">
+            <option value="small">Small</option>
+            <option value="medium" selected>Medium</option>
+            <option value="large">Large</option>
+          </select>
+        </div>
+
+        <div class="modal-row">
+          <label for="custQty">Quantity</label>
+          <input id="custQty" type="number" min="1" value="1">
+        </div>
+
+        <div class="modal-actions">
+          <button id="modalAddBtn" class="btn glow-btn">Add to Cart</button>
+          <button id="modalCancelBtn" class="btn ghost">Cancel</button>
+        </div>
+        <p class="small-note" id="modalMsg" style="margin-top:.6rem"></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script src="script.js"></script>
+  <script>document.getElementById('year2').textContent = new Date().getFullYear();</script>
+</body>
+</html>

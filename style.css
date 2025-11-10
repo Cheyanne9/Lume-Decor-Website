@@ -1,0 +1,316 @@
+/* === Lumé Décor — visual system === */
+/* Color tokens */
+:root{
+  --bg:#0f0f12;            /* dark background for dramatic aesthetic */
+  --surface:#0f1114;       /* cards */
+  --muted:#cfcfd1;
+  --accent:#ffdd57;        /* warm accent for CTAs */
+  --glass-bg: rgba(255,255,255,0.04);
+  --glass-border: rgba(255,255,255,0.06);
+  --max-width:1200px;
+  --radius:14px;
+  --shadow: 0 8px 24px rgba(2,6,23,0.6);
+  --glass-blur: 8px;
+}
+
+/* base */
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:'Poppins',system-ui,Arial;background:linear-gradient(180deg,#050506 0%, #0a0a0c 100%);color:var(--muted);-webkit-font-smoothing:antialiased}
+.container{max-width:var(--max-width);margin:0 auto;padding:1rem}
+
+/* header */
+.site-header{position:sticky;top:0;z-index:50;background:linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.12));backdrop-filter: blur(6px);border-bottom:1px solid var(--glass-border)}
+.nav-row{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.75rem 1rem}
+.brand{display:flex;align-items:center;gap:.6rem;text-decoration:none;color:var(--muted)}
+.logo{display:block;border-radius:8px;object-fit:cover;width:60px;height:auto}
+.wordmark{font-weight:600;font-family:'Playfair Display', serif;color:#fff}
+.accent{color:var(--accent)}
+.main-nav{display:block}
+.nav-list{display:flex;gap:1rem;list-style:none;margin:0;padding:0;align-items:center}
+.nav-list a{color:var(--muted);text-decoration:none;padding:.45rem .6rem;border-radius:8px;font-weight:500}
+.nav-list a:hover, .nav-list a:focus{background:rgba(255,255,255,0.03);outline:none;color:#fff}
+
+/* hamburger (mobile) */
+.nav-toggle{display:none;background:none;border:0;cursor:pointer;padding:.35rem}
+.hamburger{width:26px;height:2px;background:var(--muted);display:block;position:relative}
+.hamburger::after,.hamburger::before{content:"";position:absolute;left:0;width:26px;height:2px;background:var(--muted)}
+.hamburger::before{top:-8px} .hamburger::after{top:8px}
+
+/* hero */
+.hero{position:relative;padding:3rem 0}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(120deg, rgba(15,15,18,0.6), rgba(20,10,30,0.4));pointer-events:none;mix-blend-mode:multiply}
+.hero-grid{display:grid;grid-template-columns:1fr 420px;gap:2rem;align-items:center}
+.hero-title{font-family:'Playfair Display',serif;color:#fff;font-size:clamp(1.6rem, 3.8vw, 3.2rem);margin:0}
+.lead{color:rgba(255,255,255,0.78);margin-top:.6rem;max-width:48ch}
+.hero-media img{width:100%;height:auto;border-radius:12px;box-shadow:var(--shadow);display:block}
+
+/* glass card (featured) */
+.glass-card{background:var(--glass-bg);border:1px solid var(--glass-border);padding:1rem;border-radius:var(--radius);backdrop-filter: blur(var(--glass-blur));color:var(--muted)}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:1rem}
+.glass-card img{width:100%;height:160px;object-fit:cover;border-radius:10px}
+
+/* buttons */
+.btn{display:inline-block;padding:.6rem .9rem;border-radius:10px;text-decoration:none;font-weight:700}
+.glow-btn{background:linear-gradient(90deg,var(--accent),#ffb84d);color:#0a0a0a;box-shadow:0 6px 30px rgba(255,189,79,0.18)}
+.ghost{border:1px solid rgba(255,255,255,0.06);background:transparent;color:var(--muted)}
+
+/* newsletter form */
+.inline-form{display:flex;gap:.6rem;align-items:center}
+.inline-form input[type="email"]{padding:.55rem .7rem;border-radius:10px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:var(--muted);min-width:220px}
+
+/* footer */
+.site-footer{margin-top:3rem;padding:2rem 0;background:linear-gradient(180deg, rgba(0,0,0,0.12), transparent);border-top:1px solid var(--glass-border)}
+.foot-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+
+/* small screens */
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr}
+  .grid-4{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:640px){
+  .nav-list{display:none;flex-direction:column;background:linear-gradient(180deg, rgba(7,7,10,0.95), rgba(15,15,18,0.96));position:absolute;right:1rem;top:64px;padding:1rem;border-radius:10px}
+  .nav-toggle{display:block}
+  .nav-list.show{display:flex}
+  .grid-4{grid-template-columns:1fr}
+}
+/* filter toolbar layout */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: left; /* center the chips */
+  margin: 2rem 0;
+}
+
+/* base chip style */
+.chip {
+  display: inline-block;
+  padding: 0.5rem 1.1rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.25s ease;
+  box-shadow: 0 0 0 rgba(255, 221, 87, 0); /* invisible by default */
+}
+
+/* hover + active glow */
+.chip:hover,
+.chip:focus,
+.chip.active {
+  background: linear-gradient(90deg, var(--accent), #ffb84d);
+  color: #0a0a0a;
+  border-color: rgba(255, 221, 87, 0.4);
+  box-shadow: 0 0 18px rgba(255, 221, 87, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Makes form and summary align neatly */
+.checkout-grid {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 2rem;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .checkout-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Organize payment fields */
+.payment-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.payment-section input {
+  flex: 1 1 45%;
+  min-width: 150px;
+}
+
+/* Force CVC input onto a new line to prevent overlap */
+.payment-section #card-cvc {
+  flex: 1 1 100%;
+  margin-top: 0.5rem;
+}
+
+/* Ensure summary box stays separate */
+.summary {
+  position: relative;
+  z-index: 1;
+  margin-top: 2rem;
+}
+
+/* Optional: tighter look for smaller screens */
+@media (max-width: 640px) {
+  .payment-section input {
+    flex: 1 1 100%;
+  }
+}
+/* === Customization Modal === */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  backdrop-filter: blur(6px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.modal-content {
+  width: 90%;
+  max-width: 880px;
+  background: var(--surface);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  position: relative;
+  animation: fadeIn 0.4s ease;
+  /* Make the modal content centered and scrollable */
+.modal-content {
+  max-height: 90vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Scroll only the inside of the modal */
+.modal-body {
+  overflow-y: auto;
+  padding-right: 10px;
+  max-height: calc(90vh - 80px); /* leaves space for close button + footer buttons */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+}
+
+.close-btn {
+  position: absolute;
+  top: 0.7rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+
+.modal-left {
+  position: relative;
+  
+}
+
+.modal-left img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+#previewText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ff66cc;
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-align: center;
+  pointer-events: none;
+  white-space: nowrap;
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.65);
+  white-space: nowrap;
+}
+
+.btn.small {
+  padding: 4px 8px;
+  font-size: .75rem;
+}
+
+
+.modal-right label {
+  display: block;
+  margin-top: 0.75rem;
+  font-weight: 500;
+  color: var(--muted);
+}
+.modal-actions {
+  position: sticky;
+  bottom: 0;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(6px);
+  padding: .6rem 0;
+  margin-top: .6rem;
+}
+
+.modal-right input,
+.modal-right select {
+  width: 100%;
+  margin-top: 0.3rem;
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.06);
+  background: rgba(255,255,255,0.02);
+  color: var(--muted);
+}
+
+@media (max-width: 760px) {
+  .modal-body { grid-template-columns: 1fr; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+.scroll-box {
+  max-height: 180px;
+  overflow-y: auto;
+  padding-right: 8px;
+  margin: 0.5rem 0 1rem;
+}
+.scroll-box::-webkit-scrollbar {
+  width: 6px;
+}
+.scroll-box::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 4px;
+}
+.scroll-box::-webkit-scrollbar-track {
+  background: rgba(255,255,255,0.05);
+}
+/* Adjust "Your Text" placement under preview image */
+#previewText {
+  position: absolute;
+  top: 45%; /* slight shift upward */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ff66cc;
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-align: center;
+  pointer-events: none;
+  white-space: nowrap;
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.65);
+}
+
+
+/* Ensure modal-left container positions elements properly */
+.modal-left {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+

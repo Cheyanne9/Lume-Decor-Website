@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Checkout — Lumé Décor</title>
+  <meta name="description" content="Checkout and pay — Lumé Décor" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="container nav-row">
+      <a class="brand" href="index.html">
+	    <img src="../Assets/logo.jpg" alt="logo" class="logo">
+        <span class="wordmark">Lumé<span class="accent">Décor</span></span>
+      </a>
+      <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
+        <span class="hamburger"></span>
+      </button>
+      <nav id="primary-nav" class="main-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Shop</a></li>
+          <li><a href="cart.html">Cart</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1 class="section-title fade-up">Checkout</h1>
+
+    <div class="checkout-grid">
+      <!-- 🧾 Checkout Form -->
+      <form id="checkout-form" class="form-card glass-card fade-up">
+        <h2>Billing & Payment Details</h2>
+
+        <label for="ship-name">Full Name</label>
+        <input type="text" id="ship-name" placeholder="Enter your full name" required>
+
+        <label for="address">Address</label>
+        <input type="text" id="address" placeholder="Street Address" required>
+
+        <label for="city">City</label>
+        <input type="text" id="city" placeholder="City" required>
+
+        <label for="postal">Postal Code</label>
+        <input type="text" id="postal" placeholder="Postal Code" required>
+
+        <hr style="border:none;height:1px;background:rgba(255,255,255,0.05);margin:1rem 0;">
+		
+		<!-- Shipping details -->
+		<form id="shipping-form" class="form-card glass-card fade-up">
+        <h3>Shiping Information</h3>
+
+        <label for="ship-name">Full Name</label>
+        <input type="text" id="ship-name" placeholder="Enter your full name" required>
+
+        <label for="address">Address</label>
+        <input type="text" id="address" placeholder="Street Address" required>
+
+        <label for="city">City</label>
+        <input type="text" id="city" placeholder="City" required>
+
+        <label for="postal">Postal Code</label>
+        <input type="text" id="postal" placeholder="Postal Code" required>
+
+        <hr style="border:none;height:1px;background:rgba(255,255,255,0.05);margin:1rem 0;">
+		<label for="shipping-method">Shipping Method</label>
+		<select id="shipping-method" required>
+		<option value="">Select method</option>
+		<option value="Standard Delivery">Standard Delivery - JMD 1,500</option>
+		<option value="Express Delivery">Express Delivery - JMD 2,500</option>
+		</select>
+
+
+		<label for="shipping-phone">Phone Number</label>
+		<input type="text" id="shipping-phone" placeholder="Enter phone number for delivery" required>
+
+
+		<label for="shipping-notes">Delivery Notes (Optional)</label>
+		<textarea id="shipping-notes" placeholder="Apartment, buzzer, directions…"></textarea>
+
+
+		<hr style="border:none;height:1px;background:rgba(255,255,255,0.05);margin:1rem 0;">
+        <h4>Payment Information</h4>
+
+        <!-- 💳 Payment Inputs -->
+        <section class="payment-section">
+          <input type="text" id="card-name" placeholder="Name on Card" required>
+          <input type="text" id="card-num" placeholder="Card Number" maxlength="19" required>
+          <input type="text" id="card-exp" placeholder="MM/YY" maxlength="5" required>
+          <input type="text" id="card-cvc" placeholder="CVC" maxlength="4" required>
+        </section>
+
+        <!-- Buttons -->
+        <div style="margin-top:1.5rem;display:flex;gap:.6rem;">
+          <button type="submit" class="btn glow-btn">Complete Purchase</button>
+          <button type="button" class="btn ghost" onclick="window.location.href='cart.html'">Cancel</button>
+          <button type="button" class="btn" onclick="clearCart()">Clear All</button>
+        </div>
+      </form>
+
+      <!-- 💰 Order Summary -->
+      <aside class="summary glass-card fade-up">
+        <h2>Order Summary</h2>
+        <div id="checkout-items" style="max-height:360px;overflow:auto;margin-bottom:0.8rem;"></div>
+        <hr style="border:none;height:1px;background:rgba(255,255,255,0.05);margin:.8rem 0;">
+
+        <div style="display:flex;justify-content:space-between;">
+          <div>Subtotal</div><div id="summary-subtotal">JMD 0.00</div>
+        </div>
+        <div style="display:flex;justify-content:space-between;">
+          <div>Discount</div><div id="summary-discount">-</div>
+        </div>
+        <div style="display:flex;justify-content:space-between;">
+          <div>Tax (10%)</div><div id="summary-tax">JMD 0.00</div>
+        </div>
+
+        <hr style="border:none;height:1px;background:rgba(255,255,255,0.05);margin:.8rem 0;">
+
+        <div style="display:flex;justify-content:space-between;font-weight:700;font-size:1.1rem;">
+          <div>Total</div><div id="summary-total">JMD 0.00</div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+  <script>
+    // populate order summary and checkout items
+    function populateCheckout(){
+      const cart = JSON.parse(localStorage.getItem('lumecart_v1') || '[]');
+      const box = document.getElementById('checkout-items');
+      if(!box) return;
+      if(cart.length === 0){ 
+        box.innerHTML = '<div>Your cart is empty. <a href="products.html">Shop now</a>.</div>'; 
+        return; 
+      }
+      box.innerHTML = cart.map(i => 
+        `<div style="display:flex;justify-content:space-between;padding:.3rem 0">
+          <div><strong>${i.name}</strong> x ${i.qty}</div>
+          <div>${(i.qty*i.price).toFixed(2)}</div>
+        </div>`
+      ).join('');
+      updateSummary();
+    }
+
+    document.addEventListener('DOMContentLoaded', ()=> {
+      populateCheckout();
+      if (typeof initCheckoutForm === 'function') initCheckoutForm();
+    });
+  </script>
+</body>
+</html>

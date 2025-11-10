@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Lumé Décor — Home</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="container nav-row">
+       <a class="brand" href="index.html"><img src="../Assets/logo.jpg" alt="logo" class="logo"><span class="wordmark">Lumé<span class="accent">Décor</span></span></a>
+      <nav aria-label="Primary" class="main-nav">
+        <ul class="nav-list">
+	  <li><a href="index.html">Home</a></li>
+	  <li><a href="products.html">Shop</a></li>
+	  <li><a href="about.html">About</a></li>
+	  <li><a href="cart.html">Cart <span class="cart-count" id="cart-count">0</span></a></li>
+	</ul>
+
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-layer"></div> <!-- decorative -->
+      <div class="container hero-grid">
+        <div class="hero-copy fade-up">
+          <h1 class="hero-title glow">Custom Mirrors &amp; LED Signs</h1>
+          <p class="lead">Welcome to LuméDécor! The number 1 store for mirrors, glowing LED signs and stunning wall art that transform ordinary room into extraordinary spaces. Each piece is designed to reflect your personality and elevate your aesthetic. Customize your fav and let your space shine with Lumé!!!</p>
+          <div class="hero-ctas">
+            <a class="btn glow-btn" href="products.html">Shop Now</a>
+            <a class="btn ghost" href="#featured">Explore</a>
+          </div>
+        </div>
+
+        <figure class="hero-media fade-in" aria-hidden="true">
+          <img src="../Assets/custom mirror and led.jpeg" alt="Room with a custom mirror and glowing LED sign" />
+          <figcaption class="sr-only">Stylish room mockup with mirror and neon sign</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Featured -->
+    <section id="featured" class="featured container">
+      <h2 class="section-title fade-up">Featured Collections</h2>
+      <div class="grid-4">
+        <article class="glass-card fade-up" aria-labelledby="f1">
+          <img src="../Assets/custom mirror.jpg" alt="Custom mirror" />
+          <h3 id="f1">Custom Mirrors</h3>
+          <p>Create engraved and shaped mirrors to match your space.</p>
+          <a class="btn small" href="products.html#mirrors">View</a>
+        </article>
+
+        <article class="glass-card fade-up" aria-labelledby="f2">
+          <img src="../Assets/led sign.jpg" alt="LED sign " />
+          <h3 id="f2">LED Signs</h3>
+          <p>Neon-style, customizable text and shapes.</p>
+          <a class="btn small" href="products.html#leds">View</a>
+        </article>
+
+        <article class="glass-card fade-up" aria-labelledby="f3">
+          <img src="../Assets/wall art.jpg" alt="Wall art" />
+          <h3 id="f3">Wall Art</h3>
+          <p>Prints and canvases curated for modern rooms.</p>
+          <a class="btn small" href="products.html#wallart">View</a>
+        </article>
+
+        <article class="glass-card fade-up" aria-labelledby="f4">
+          <img src="../Assets/assessories.jpg" alt="Room accessory" />
+          <h3 id="f4">Accessories</h3>
+          <p>LED strips, stands, and finishing touches.</p>
+          <a class="btn small" href="products.html#accessories">View</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter container fade-up">
+      <div class="newsletter-card glass-card">
+        <h3>Stay in the Glow</h3>
+        <p>Get exclusive drops and 10% off your first order.</p>
+        <form class="inline-form" action="#" method="post" aria-label="Subscribe to newsletter">
+          <label for="hero-email" class="sr-only">Email address</label>
+          <input id="hero-email" name="email" type="email" placeholder="you@example.com" required>
+          <button class="btn glow-btn" type="submit">Subscribe</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container foot-grid">
+      <div>
+        <h4>Lumé Décor</h4>
+        <p>Illuminate your world with LuméDécor.<br>Your vibe. Your light. Your room </p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="products.html">Shop</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p><a href="mailto:2404856@utech.edu.jm">2404856@utech.edu.jm</a></p>
+      </div>
+    </div>
+    <div class="copyright">&copy; <span id="year"></span> Lumé Décor</div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

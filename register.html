@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Register — Lumé Décor</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Center the form vertically and horizontally */
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    .auth-card {
+      width: 100%;
+      max-width: 420px;
+      text-align: center;
+      animation: fadeUp 0.9s ease both;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      margin-top: 1rem;
+    }
+    input {
+      padding: 0.7rem;
+      border-radius: 10px;
+      border: 1px solid rgba(0,0,0,0.1);
+      font-size: 1rem;
+      width: 100%;
+    }
+    input:focus {
+      outline: none;
+      border: 1px solid var(--accent);
+      box-shadow: 0 0 10px rgba(183,110,121,0.3);
+    }
+    .auth-link {
+      margin-top: 0.8rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .error {
+      color: crimson;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="auth-card glass-card">
+    <h1 class="glow">Create Account</h1>
+    <p class="muted">Join Lumé Décor and start customizing your vibe!</p>
+    <form id="registerForm" novalidate>
+      <input type="text" id="fullname" placeholder="Full Name" required>
+	  <input type="date" id="dob" name="dob" placeholder="Date of Birth" required>
+	  <input type="text" id="username" name="username" placeholder="Username" required>
+      <input type="email" id="email" placeholder="Email" required>
+      <input type="password" id="password" placeholder="Password" required>
+      <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+      <p id="regError" class="error"></p>
+      <button type="submit" class="btn glow-btn">Register</button>
+    </form>
+    <p>Already have an account?<br>
+      <a href="login.html" class="auth-link">Login here</a>
+    </p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

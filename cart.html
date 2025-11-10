@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cart — Lumé Décor</title>
+  <meta name="description" content="Your shopping cart — Lumé Décor" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="container nav-row">
+      <a class="brand" href="index.html"><img src="../Assets/logo.jpg" alt="logo" class="logo"><span class="wordmark">Lumé<span class="accent">Décor</span></span></a>
+      <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation"><span class="hamburger"></span></button>
+      <nav id="primary-nav" class="main-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Shop</a></li>
+          <li><a href="about.html">About</a></li>
+          </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1 class="section-title fade-up">Your Cart</h1>
+
+    <div style="display:grid;grid-template-columns:1fr 340px;gap:1rem">
+      <div class="card form-card">
+        <table class="cart" aria-describedby="cart-desc">
+          <caption id="cart-desc" style="text-align:left;padding:.6rem">Items in your shopping cart</caption>
+          <thead><tr><th>Product</th><th>Unit</th><th>Qty</th><th>Total</th><th></th></tr></thead>
+          <tbody id="cart-items-body">
+            <!-- rendered by JS -->
+          </tbody>
+        </table>
+
+        <div style="margin-top:.8rem;display:flex;gap:.6rem">
+          <button class="btn" onclick="clearCart()">Clear All</button>
+          <a href="checkout.html" class="btn glow-btn">Check Out</a>
+          <button class="btn ghost" onclick="window.location.href='products.html'">Continue Shopping</button>
+        </div>
+      </div>
+
+      <aside class="summary">
+        <h3>Order summary</h3>
+        <div style="display:flex;justify-content:space-between"><div>Subtotal</div><div id="summary-subtotal">$0.00</div></div>
+        <div style="display:flex;justify-content:space-between"><div>Discount</div><div id="summary-discount">-</div></div>
+        <div style="display:flex;justify-content:space-between"><div>Tax (10%)</div><div id="summary-tax">$0.00</div></div>
+        <hr style="border:none;height:1px;background:rgba(255,255,255,0.04);margin:.6rem 0">
+        <div style="display:flex;justify-content:space-between;font-weight:800"><div>Total</div><div id="summary-total">$0.00</div></div>
+      </aside>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+  <script>
+    // Render cart table and summary on page load
+    document.addEventListener('DOMContentLoaded', ()=> {
+      renderCartTable();
+      updateCartCount();
+    });
+  </script>
+</body>
+</html>
